@@ -34,7 +34,7 @@ Objective: Ensure secure deployment and configuration for the MEAN stack applica
 
 ✔ Key Deliverables
 
-Environment Variables → Secure MongoDB credentials and API endpoints
+**Environment Variables → Secure MongoDB credentials and API endpoints
 Nginx Configuration → Reverse proxy for API routing and static file serving
 Docker Security → Non-root user in containers, minimal base images
 Screenshots → Documentation of running application, Docker Compose, and CI/CD workflow
@@ -82,44 +82,43 @@ Frontend: Angular 15
 MongoDB: Official MongoDB image
 Nginx: Serves frontend on port 80 and routes API requests to backend.
 --
-📂 Repository Structure
-
+📂 **Repository Structure (Clean + Well-Formatted)
 crud-dd-task-mean-app/
-├── backend/                             # Node.js + Express backend API
-│   ├── Dockerfile                       # Dockerfile - backend build instructions
-│   ├── package.json                     # Backend dependencies & scripts
-│   ├── server.js                        # Backend entry point
+├── backend/                              # Node.js + Express backend API
+│   ├── Dockerfile                         # Backend image build file
+│   ├── package.json                       # Backend dependencies & scripts
+│   ├── server.js                          # Backend entry point
 │   └── app/
 │       ├── config/
-│       │   └── db.config.js             # MongoDB configuration setup
+│       │   └── db.config.js               # MongoDB configuration setup
 │       ├── controllers/
-│       │   └── tutorial.controller.js   # CRUD logic for tutorials
+│       │   └── tutorial.controller.js     # CRUD logic for tutorials
 │       ├── models/
-│       │   ├── index.js                 # Database model initialization
-│       │   └── tutorial.model.js        # Mongoose schema/model
+│       │   ├── index.js                   # Mongoose model initialization
+│       │   └── tutorial.model.js          # Tutorial schema/model
 │       └── routes/
-│           └── tutorial.routes.js       # REST API routing
+│           └── tutorial.routes.js         # REST API routing
 │
-├── frontend/                            # Angular 15 frontend application
-│   ├── Dockerfile                       # Dockerfile - frontend build instructions
-│   ├── package.json                     # Angular dependencies & scripts
+├── frontend/                              # Angular 15 frontend application
+│   ├── Dockerfile                         # Frontend image build file
+│   ├── package.json                       # Angular dependencies & scripts
 │   └── src/
 │       ├── app/
-│       │   ├── components/              # UI components
+│       │   ├── components/                # UI components
 │       │   │   ├── add-tutorial/
 │       │   │   ├── tutorial-details/
 │       │   │   └── tutorials-list/
 │       │   ├── services/
-│       │   │   └── tutorial.service.ts  # Service to communicate with backend
-│       │   └── app.module.ts            # Angular root module
-│       └── index.html                   # Main HTML entry point
+│       │   │   └── tutorial.service.ts    # Service for backend API calls
+│       │   └── app.module.ts              # Main Angular module
+│       └── index.html                     # Angular entry point
 │
-├── docker-compose.yml                   # Multi-container orchestration for Deployment
-├── README.md                            # Project documentation
-└── screenshots/                         # CI/CD, deployment & UI screenshots
+├── docker-compose.yml                     # Multi-container deployment setup
+├── README.md                              # Project documentation
+└── screenshots/                           # CI/CD + UI proof screenshots
 
---
-✅ Summary
+
+✅ **Summary
 Fully containerized MEAN stack application with CRUD operations and search
 Deployed using Docker Compose and Nginx reverse proxy
 CI/CD pipeline implemented with GitHub Actions for automated builds and deployments
