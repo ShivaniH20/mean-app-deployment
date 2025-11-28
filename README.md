@@ -1,128 +1,107 @@
-MEAN Stack CRUD Application Deployment
+🚀 MEAN Stack CRUD Application Deployment
 
-This repository contains a full-stack MEAN (MongoDB, Express, Angular, Node.js) CRUD application, fully containerized and deployed with Docker, Nginx, and CI/CD automation. Users can create, read, update, and delete tutorials, with search functionality by title.
 
-📌 Project Overview
 
-Backend: Node.js + Express REST APIs connected to MongoDB
 
-Frontend: Angular 15 application consuming backend APIs
 
-Database: MongoDB (Docker container or local installation)
 
-Deployment: Docker Compose + Nginx reverse proxy
 
-CI/CD: GitHub Actions for automated build, push, and deployment
 
+
+
+
+
+This repository contains a full-stack MEAN (MongoDB, Express, Angular, Node.js) CRUD Application, fully containerized and deployed using Docker + Nginx + CI/CD automation.
+Users can Create, Read, Update, Delete tutorials with search functionality.
+---
+📌 **Project Overview
+Component	Technology
+Frontend	Angular 15
+Backend	Node.js + Express REST API
+Database	MongoDB
+Orchestration	Docker Compose
+Reverse Proxy	Nginx
+CI/CD Automation	GitHub Actions
+
+✔ Node.js API for CRUD operations
+✔ Angular UI for accessing backend APIs
+✔ MongoDB database (container or local)
+✔ Nginx reverse proxy → Application accessible on port 80
+---
 📂 Repository Structure
 crud-dd-task-mean-app/
-├── backend/                    # Node.js + Express backend
-│   ├── Dockerfile              # Dockerfile for backend
-│   ├── package.json            # Dependencies & scripts
-│   ├── server.js               # Entry point for backend
+├── backend/                        # Express backend API
+│   ├── Dockerfile                  # Backend docker image build file
+│   ├── server.js                   # Entry point for backend
+│   ├── package.json
 │   └── app/
-│       ├── config/
-│       │   └── db.config.js    # MongoDB configuration
-│       ├── controllers/
-│       │   └── tutorial.controller.js
-│       ├── models/
-│       │   ├── index.js
-│       │   └── tutorial.model.js
-│       └── routes/
-│           └── tutorial.routes.js
-├── frontend/                   # Angular frontend
-│   ├── Dockerfile              # Dockerfile for frontend
-│   ├── package.json            # Dependencies & scripts
+│       ├── config/db.config.js     # MongoDB connection settings
+│       ├── controllers/            # CRUD controller logic
+│       ├── models/                 # Mongoose schemas/models
+│       └── routes/                 # API endpoints
+│
+├── frontend/                       # Angular UI application
+│   ├── Dockerfile                  # Frontend docker image build file
+│   ├── package.json
 │   └── src/
 │       ├── app/
-│       │   ├── components/
-│       │   │   ├── add-tutorial/
-│       │   │   ├── tutorial-details/
-│       │   │   └── tutorials-list/
-│       │   ├── services/
-│       │   │   └── tutorial.service.ts
+│       │   ├── components/         # UI components
+│       │   ├── services/           # API service layer
 │       │   └── app.module.ts
 │       └── index.html
-├── docker-compose.yml          # Multi-container deployment
-├── README.md                   # Project documentation
-└── screenshots/                # Screenshots for deployment and CI/CD
-
-🛠️ Setup Instructions
-Backend (Node.js + Express)
+│
+├── docker-compose.yml              # Multi-container deployment
+├── nginx.conf                      # Reverse proxy config
+├── .github/workflows/cicd.yml      # GitHub Actions deployment workflow
+├── README.md                       # Project documentation
+└── screenshots/                    # Deployment proof & execution screenshots
+---
+🛠** Local Setup
+Backend
 cd backend
 npm install
-
-
-Update MongoDB credentials in app/config/db.config.js if required
-
-Run the backend server:
-
 node server.js
+---
 
+➡ Runs at: http://localhost:8080
 
-Backend runs on port 8080 by default.
-
-Frontend (Angular 15)
+Frontend
 cd frontend
 npm install
 ng serve --port 8081
 
 
-Frontend is accessible at:
-
-http://localhost:8081
-
-
-Modify tutorial.service.ts to adjust backend API endpoints if needed
-
-Docker Deployment
-
-Build and start containers using Docker Compose:
-
+➡ UI: http://localhost:8081
+---
+🐳 Docker Deployment
 sudo docker compose up -d --build
 
+**Service	Port
+Backend	8080
+Frontend (via Nginx)	80
+MongoDB	27017
+---
+**Nginx routes:
 
-Containers included:
+/api → Node backend
+/    → Angular frontend
 
-Backend: Node.js + Express
+⚡ **CI/CD Pipeline (GitHub Actions)
+---
+Automations included:
 
-Frontend: Angular 15
-
-MongoDB: Official MongoDB image
-
-Nginx serves the frontend on port 80 and routes API requests to backend.
-
-CI/CD Pipeline (GitHub Actions)
-
-Automatically builds Docker images on GitHub push
-
-Pushes images to Docker Hub
-
-Pulls latest images on VM and restarts containers
-
-🖼 Screenshots
-
-Include in screenshots/ folder:
-
-Backend running
-
-Frontend running
-
-Docker Compose up
-
-Nginx reverse proxy
-
-CI/CD workflow execution
-
+**Action	Status
+Build Docker Images	✔ On every push
+Push to Docker Hub	✔ Automatic
+Pull & Deploy in VM	✔ Auto restart containers
+---
+Workflow file: .github/workflows/cicd.yml
+---
 ✅ Summary
 
-Fully containerized MEAN stack application
-
-Deployed with Docker Compose and Nginx
-
-CI/CD implemented using GitHub Actions
-
-MongoDB database integrated
-
-Screenshots included for reference
+✔ Fully containerized MEAN stack
+✔ Reverse proxy using Nginx
+✔ CI/CD implemented using GitHub Actions
+✔ MongoDB + Express API working
+✔ Angular UI integrated with backend
 
