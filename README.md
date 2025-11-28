@@ -2,8 +2,9 @@
 
 Docker | Nginx | GitHub Actions | Node.js | Angular | MongoDB
 
-This repository contains the full-stack MEAN (MongoDB, Express, Angular, Node.js) CRUD application, fully containerized and deployed with CI/CD automation. Users can create, read, update, and delete tutorials with search functionality by title.
-Navigate to `http://localhost:8081/`
+This repository contains a full-stack MEAN (MongoDB, Express, Angular, Node.js) CRUD application, fully containerized and deployed with CI/CD automation.
+Users can create, read, update, and delete tutorials with search functionality by title.
+Frontend accessible at: http://localhost:8081/
 
 📌 Project Overview
 
@@ -17,6 +18,7 @@ Deployment: Docker Compose + Nginx reverse proxy
 
 CI/CD: GitHub Actions for automated build, push, and deployment
 
+🗂️ Project Structure
 crud-dd-task-mean-app/
 ├── backend/                   # Node.js + Express backend
 │   ├── Dockerfile             # Dockerfile for backend
@@ -51,7 +53,7 @@ crud-dd-task-mean-app/
 ├── README.md                  # Project documentation
 └── screenshots/               # Screenshots for deployment and CI/CD
 
-Setup Instructions
+⚙️ Setup Instructions
 Backend (Node.js + Express)
 cd backend
 npm install
@@ -67,14 +69,11 @@ npm install
 ng serve --port 8081
 
 
-Frontend is accessible at:
+Frontend is accessible at: http://localhost:8081
 
-http://localhost:8081
+Modify tutorial.service.ts to adjust backend API endpoints.
 
-
-You can modify tutorial.service.ts to adjust backend API endpoints.
-
-Docker Deployment
+🐳 Docker Deployment
 
 Build and start containers using Docker Compose:
 
@@ -89,9 +88,9 @@ Frontend: Angular 15
 
 MongoDB: Official MongoDB image
 
-Nginx serves the frontend on port 80 and routes API requests to backend.
+Nginx serves the frontend on port 80 and routes API requests to the backend.
 
-CI/CD Pipeline (GitHub Actions)
+⚡ CI/CD Pipeline (GitHub Actions)
 
 Automatically builds Docker images on GitHub push
 
@@ -123,4 +122,9 @@ CI/CD implemented using GitHub Actions
 
 MongoDB database integrated
 
+Screenshots included for reference
+
+
+
+ChatGPT can make mistakes. Check importan
 Screenshots included for reference
