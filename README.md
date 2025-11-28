@@ -47,7 +47,6 @@ Clone this repository:
 bash
 
 Copy code
-git clone https://github.com/your-username/crud-dd-task-mean-app.git
 cd crud-dd-task-mean-app
 Local Development
 Backend (Node.js + Express):
