@@ -1,0 +1,31 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mean-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: mean-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    # DO NOT mount ./backend:/app as a volume; it overwrites container content
+
+  frontend:
+    build: ./frontend
+    container_name: mean-frontend
+    restart: always
+    ports:
+      - "8081:8081"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
