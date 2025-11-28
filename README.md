@@ -1,11 +1,11 @@
 🚀 MEAN Stack CRUD Application Deployment & Automation Project
 --
-Docker
-Node.js
-Angular
-MongoDB
-GitHub Actions
-Nginx
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)]()
+[![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)]()
+[![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white)]()
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)]()
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)]()
+
 
 This repository contains a full-stack MEAN (MongoDB, Express, Angular, Node.js) CRUD application, fully containerized and deployed with Docker, Nginx reverse proxy, and CI/CD automation. Users can create, read, update, and delete tutorials, with search functionality by title.
 --
@@ -85,36 +85,39 @@ Nginx: Serves frontend on port 80 and routes API requests to backend.
 📂 Repository Structure
 
 crud-dd-task-mean-app/
-├── backend/                  # Node.js + Express backend
-│   ├── Dockerfile            # Dockerfile for backend
-│   ├── package.json          # Dependencies & scripts
-│   ├── server.js             # Entry point for backend
+├── backend/                             # Node.js + Express backend API
+│   ├── Dockerfile                       # Dockerfile - backend build instructions
+│   ├── package.json                     # Backend dependencies & scripts
+│   ├── server.js                        # Backend entry point
 │   └── app/
 │       ├── config/
-│       │   └── db.config.js  # MongoDB configuration
+│       │   └── db.config.js             # MongoDB configuration setup
 │       ├── controllers/
-│       │   └── tutorial.controller.js
+│       │   └── tutorial.controller.js   # CRUD logic for tutorials
 │       ├── models/
-│       │   ├── index.js
-│       │   └── tutorial.model.js
+│       │   ├── index.js                 # Database model initialization
+│       │   └── tutorial.model.js        # Mongoose schema/model
 │       └── routes/
-│           └── tutorial.routes.js
-├── frontend/                 # Angular frontend
-│   ├── Dockerfile            # Dockerfile for frontend
-│   ├── package.json          # Dependencies & scripts
+│           └── tutorial.routes.js       # REST API routing
+│
+├── frontend/                            # Angular 15 frontend application
+│   ├── Dockerfile                       # Dockerfile - frontend build instructions
+│   ├── package.json                     # Angular dependencies & scripts
 │   └── src/
 │       ├── app/
-│       │   ├── components/
+│       │   ├── components/              # UI components
 │       │   │   ├── add-tutorial/
 │       │   │   ├── tutorial-details/
 │       │   │   └── tutorials-list/
 │       │   ├── services/
-│       │   │   └── tutorial.service.ts
-│       │   └── app.module.ts
-│       └── index.html
-├── docker-compose.yml        # Multi-container deployment
-├── README.md                 # Project documentation
-└── screenshots/              # Screenshots for deployment and CI/CD
+│       │   │   └── tutorial.service.ts  # Service to communicate with backend
+│       │   └── app.module.ts            # Angular root module
+│       └── index.html                   # Main HTML entry point
+│
+├── docker-compose.yml                   # Multi-container orchestration for Deployment
+├── README.md                            # Project documentation
+└── screenshots/                         # CI/CD, deployment & UI screenshots
+
 --
 ✅ Summary
 Fully containerized MEAN stack application with CRUD operations and search
