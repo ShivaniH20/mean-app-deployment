@@ -1,27 +1,126 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+🚀 MEAN Stack CRUD Application Deployment
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+Docker | Nginx | GitHub Actions | Node.js | Angular | MongoDB
 
-## Project setup
-
-### Node.js Server
-
-cd backend
-
-npm install
-
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
-
-Run `node server.js`
-
-### Angular Client
-
-cd frontend
-
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
+This repository contains the full-stack MEAN (MongoDB, Express, Angular, Node.js) CRUD application, fully containerized and deployed with CI/CD automation. Users can create, read, update, and delete tutorials with search functionality by title.
 Navigate to `http://localhost:8081/`
+
+📌 Project Overview
+
+Backend: Node.js + Express REST APIs connected to MongoDB
+
+Frontend: Angular 15 application consuming backend APIs
+
+Database: MongoDB (Docker container or local installation)
+
+Deployment: Docker Compose + Nginx reverse proxy
+
+CI/CD: GitHub Actions for automated build, push, and deployment
+
+crud-dd-task-mean-app/
+├── backend/                   # Node.js + Express backend
+│   ├── Dockerfile             # Dockerfile for backend
+│   ├── package.json           # Dependencies & scripts
+│   ├── server.js              # Entry point for backend
+│   └── app/
+│       ├── config/
+│       │   └── db.config.js   # MongoDB configuration
+│       ├── controllers/
+│       │   └── tutorial.controller.js
+│       ├── models/
+│       │   ├── index.js
+│       │   └── tutorial.model.js
+│       └── routes/
+│           └── tutorial.routes.js
+│
+├── frontend/                  # Angular frontend
+│   ├── Dockerfile             # Dockerfile for frontend
+│   ├── package.json           # Dependencies & scripts
+│   └── src/
+│       ├── app/
+│       │   ├── components/
+│       │   │   ├── add-tutorial/
+│       │   │   ├── tutorial-details/
+│       │   │   └── tutorials-list/
+│       │   ├── services/
+│       │   │   └── tutorial.service.ts
+│       │   └── app.module.ts
+│       └── index.html
+│
+├── docker-compose.yml         # Multi-container deployment
+├── README.md                  # Project documentation
+└── screenshots/               # Screenshots for deployment and CI/CD
+
+Setup Instructions
+Backend (Node.js + Express)
+cd backend
+npm install
+# Update MongoDB credentials in app/config/db.config.js if required
+node server.js
+
+
+Backend runs on port 8080 by default.
+
+Frontend (Angular 15)
+cd frontend
+npm install
+ng serve --port 8081
+
+
+Frontend is accessible at:
+
+http://localhost:8081
+
+
+You can modify tutorial.service.ts to adjust backend API endpoints.
+
+Docker Deployment
+
+Build and start containers using Docker Compose:
+
+sudo docker compose up -d --build
+
+
+Containers included:
+
+Backend: Node.js + Express
+
+Frontend: Angular 15
+
+MongoDB: Official MongoDB image
+
+Nginx serves the frontend on port 80 and routes API requests to backend.
+
+CI/CD Pipeline (GitHub Actions)
+
+Automatically builds Docker images on GitHub push
+
+Pushes images to Docker Hub
+
+Pulls latest images on VM and restarts containers
+
+🖼 Screenshots
+
+Include in screenshots/ folder:
+
+Backend running
+
+Frontend running
+
+Docker Compose up
+
+Nginx reverse proxy
+
+CI/CD workflow execution
+
+✅ Summary
+
+Fully containerized MEAN stack application
+
+Deployed with Docker Compose and Nginx
+
+CI/CD implemented using GitHub Actions
+
+MongoDB database integrated
+
+Screenshots included for reference
