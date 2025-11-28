@@ -84,7 +84,6 @@ Nginx: Serves frontend on port 80 and routes API requests to backend.
 --
 📂 Repository Structure
 
-Copy code
 crud-dd-task-mean-app/
 ├── backend/                  # Node.js + Express backend
 │   ├── Dockerfile            # Dockerfile for backend
