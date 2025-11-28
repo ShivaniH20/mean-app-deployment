@@ -16,13 +16,13 @@ CI/CD: GitHub Actions for automated build, push, and deployment
 
 📂 Repository Structure
 crud-dd-task-mean-app/
-├── backend/                  # Node.js + Express backend
-│   ├── Dockerfile            # Dockerfile for backend
-│   ├── package.json          # Dependencies & scripts
-│   ├── server.js             # Entry point for backend
+├── backend/                    # Node.js + Express backend
+│   ├── Dockerfile              # Dockerfile for backend
+│   ├── package.json            # Dependencies & scripts
+│   ├── server.js               # Entry point for backend
 │   └── app/
 │       ├── config/
-│       │   └── db.config.js  # MongoDB configuration
+│       │   └── db.config.js    # MongoDB configuration
 │       ├── controllers/
 │       │   └── tutorial.controller.js
 │       ├── models/
@@ -30,9 +30,9 @@ crud-dd-task-mean-app/
 │       │   └── tutorial.model.js
 │       └── routes/
 │           └── tutorial.routes.js
-├── frontend/                 # Angular frontend
-│   ├── Dockerfile            # Dockerfile for frontend
-│   ├── package.json          # Dependencies & scripts
+├── frontend/                   # Angular frontend
+│   ├── Dockerfile              # Dockerfile for frontend
+│   ├── package.json            # Dependencies & scripts
 │   └── src/
 │       ├── app/
 │       │   ├── components/
@@ -43,9 +43,9 @@ crud-dd-task-mean-app/
 │       │   │   └── tutorial.service.ts
 │       │   └── app.module.ts
 │       └── index.html
-├── docker-compose.yml        # Multi-container deployment
-├── README.md                 # Project documentation
-└── screenshots/              # Screenshots for deployment and CI/CD
+├── docker-compose.yml          # Multi-container deployment
+├── README.md                   # Project documentation
+└── screenshots/                # Screenshots for deployment and CI/CD
 
 🛠️ Setup Instructions
 Backend (Node.js + Express)
