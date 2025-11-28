@@ -84,7 +84,8 @@ Frontend: Angular 15
 MongoDB: Official MongoDB image
 Nginx: Serves frontend on port 80 and routes API requests to backend.
 
-📂 **Repository Structure (Clean + Well-Formatted)
+📂 Repository Structure 
+
 crud-dd-task-mean-app/
 ├── backend/                              # Node.js + Express backend API
 │   ├── Dockerfile                         # Backend image build file
