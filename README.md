@@ -99,39 +99,39 @@ MongoDB: Official MongoDB image
 
 Nginx: Serves frontend on port 80 and routes API requests to backend
 
-crud-dd-task-mean-app/
-├── backend/                     # Node.js + Express backend API
-│   ├── Dockerfile               # Backend Docker image build file
-│   ├── package.json             # Backend dependencies & scripts
-│   ├── server.js                # Backend entry point
-│   └── app/
-│       ├── config/
-│       │   └── db.config.js     # MongoDB configuration
-│       ├── controllers/
-│       │   └── tutorial.controller.js  # CRUD logic for tutorials
-│       ├── models/
-│       │   ├── index.js         # Mongoose model initialization
-│       │   └── tutorial.model.js  # Tutorial schema/model
-│       └── routes/
-│           └── tutorial.routes.js   # REST API routing
-│
-├── frontend/                     # Angular 15 frontend application
-│   ├── Dockerfile               # Frontend Docker image build file
-│   ├── package.json             # Angular dependencies & scripts
-│   └── src/
-│       ├── index.html           # Angular entry point
-│       └── app/
-│           ├── app.module.ts    # Main Angular module
-│           ├── components/      # UI components
-│           │   ├── add-tutorial/
-│           │   ├── tutorial-details/
-│           │   └── tutorials-list/
-│           └── services/
-│               └── tutorial.service.ts  # Service for backend API calls
-│
-├── docker-compose.yml            # Multi-container deployment configuration
-├── README.md                     # Project documentation
-└── screenshots/                  # CI/CD and UI proof screenshots
+```
+📂 crud-dd-task-mean-app/
+├── backend/
+│ ├── Dockerfile
+│ ├── package.json
+│ ├── server.js
+│ └── app/
+│ ├── config/
+│ │ └── db.config.js
+│ ├── controllers/
+│ │ └── tutorial.controller.js
+│ ├── models/
+│ │ ├── index.js
+│ │ └── tutorial.model.js
+│ └── routes/
+│ └── tutorial.routes.js
+├── frontend/
+│ ├── Dockerfile
+│ ├── package.json
+│ └── src/
+│ ├── index.html
+│ └── app/
+│ ├── app.module.ts
+│ ├── components/
+│ │ ├── add-tutorial/
+│ │ ├── tutorial-details/
+│ │ └── tutorials-list/
+│ └── services/
+│ └── tutorial.service.ts
+├── docker-compose.yml
+├── README.md
+└── screenshots/
+```
 --
 ✅ Summary
 
